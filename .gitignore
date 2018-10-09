@@ -6,3 +6,9 @@
 
 # npm
 node_modules
+
+
+# generated files
+dist
+
+package-lock.json

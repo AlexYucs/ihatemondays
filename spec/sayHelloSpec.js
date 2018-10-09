@@ -1,56 +1,29 @@
-var sayHello = require("../src/sayHello.js");
+var sayHello = require('../src/scripts/sayHello.js');
 
-describe("Greet", function (){
-  //hello name
-  it("concats Hello and a name", function(){
-    var sayHello1  = new sayHello();
-    var actual = sayHello1.greet("World");
-    var expected = "Hello, World";
-    expect(actual).toEqual(expected);
-  });
-
-  //hello day time
-  it("time of day hello", function(){
-    var sayHello1   = new sayHello();
-    var actual = sayHello1.greet("Good morning");
-    var expected = "Good morning";
-    expect(actual).toEqual(expected);
-
-    var actual = sayHello1.greet("Good afternoon");
-    var expected = "Good afternoon";
-    expect(actual).toEqual(expected);
-
-    var actual = sayHello1.greet("Good evening");
-    var expected = "Good evening";
-    expect(actual).toEqual(expected);
-  });
-
-  //hello empty
-  it("Login prompt for empty", function(){
-    var sayHello2 =  new sayHello();
-    var actual = sayHello2.greet("");
-    var expected = "Please Login";
-    expect(actual).toEqual(expected);
-  });
-
-
-    //hello German
-    it("replies Hallo to Hallo", function(){
-      var sayHello3 =   new sayHello();
-      var actual = sayHello3.greet("Hallo");
-      var expected = "Hallo";
-      expect(actual).toEqual(expected);
+describe('Greet', function() {
+    it('concats Hello and a name', function() {
+        var actual = sayHello.greet('World');
+        var expected = 'Hello, World';
+        expect(actual).toEqual(expected);
     });
 
-    //hello x4
-    it("4x hello", function(){
-      var sayHello4 = new sayHello();
-      sayHello4.greet("Hallo");
-      sayHello4.greet("Hallo");
-      sayHello4.greet("Hallo");
-      sayHello4.greet("Hallo");
-      var actual = sayHello4.greet("Hallo");
-      var expected = "";
-      expect(actual).toEqual(expected);
+    it('says "Hello, Friend!" when no name is given', function() {
+        var actual = sayHello.greet('');
+        var expected = 'Hello, Friend!';
+        expect(actual).toEqual(expected);
+    });
+
+    it('says good morning in the morning', function() {
+        var theDate = new Date('February 01, 2018 08:00:00');
+
+        var actual = sayHello.greet('World',theDate);
+        var expected = 'Good Morning, World';
+        expect(actual).toEqual(expected);
+
+    });
+    it('speaks German to Germans', function() {
+        var actual = sayHello.greet('Hans');
+        var expected = 'Guten Tag, Hans';
+        expect(actual).toEqual(expected);
     });
 });
