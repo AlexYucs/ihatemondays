@@ -5,16 +5,17 @@ import PollQuestion from '../components/PollQuestion';
 import RadioButtonGroup from '../components/RadioButtonGroup';
 import PollSubmitButton from '../components/PollSubmitButton';
 import CurrentChoice from '../components/CurrentChoice';
-import data from '../data/data.json';
+//import data from '../data/data.json';
 
 class PollContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      header: "Welcome1",
-      question: "What is better",
-      checkedValue: "",
-      correctAnswer: "Dog"
+      header: '',
+      question: '',
+      correctAnswer: '',
+      choices: [],
+      checkedValue: ""
     };
     this.setCheckedValue = this.setCheckedValue.bind(this);
 
@@ -60,7 +61,7 @@ class PollContainer extends React.Component {
     // {value: 'Parrot', label: 'Parrot'}
     // ];
 
-    const choices = data.poll.questions[0].choices;
+    //const choices = data.poll.questions[0].choices;
 
     var rowStyle = {
       backgroundColor: '#dadada',
@@ -76,8 +77,9 @@ class PollContainer extends React.Component {
 
           <form>
             <PollQuestion text={this.state.question}/>
-            <RadioButtonGroup name='answer' onChange={this.setCheckedValue} checkedValue={this.state.checkedValue} choices={choices}/>
+            <RadioButtonGroup name='answer' onChange={this.setCheckedValue} checkedValue={this.state.checkedValue} choices={this.state.choices}/>
             <CurrentChoice text={this.state.checkedValue}/>
+            <CurrentChoice text={this.state.correctAnswer}/>
             <PollSubmitButton/>
           </form>
         </div>
