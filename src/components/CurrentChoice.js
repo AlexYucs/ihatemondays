@@ -1,9 +1,7 @@
 import React from 'react';
 
-class PollHeader extends React.Component {
-  render() {
-    return (<p className="text-center" style={{textAlign:"center"}}>{this.props.text}</p>);
-  }
+function CurrentChoice(props){
+    return(<div>Current selection: {props.text}</div>);
 }
 
-export default PollHeader;
+export default CurrentChoice;

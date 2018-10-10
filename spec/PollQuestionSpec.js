@@ -1,11 +1,12 @@
 import React from 'react';
 import TestUtils from 'react-dom/test-utils';
 import PollQuestion from '../src/components/PollQuestion.js';
+import TestWrapper from '../src/components/TestWrapper.js';
 
 describe('rend test', function() {
   var component;
   beforeEach(function() {
-    component = TestUtils.renderIntoDocument(<PollQuestion text="What is the question?"/>);
+    component = TestUtils.renderIntoDocument(<TestWrapper><PollQuestion text="What is the question?"/></TestWrapper>);
   });
   it('renders without problems', function() {
     expect(component).toEqual(jasmine.anything());
