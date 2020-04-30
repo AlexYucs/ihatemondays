@@ -37,7 +37,7 @@
     "jasmine": "^3.1.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "karma": "^2.0.2",
     "karma-chrome-launcher": "^2.2.0",
     "karma-commonjs": "^1.0.0",
